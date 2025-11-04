@@ -41,9 +41,7 @@ public class Ant : Enemy
     {
         Behavior();
     }
-
-        // Update is called once per frame
-        void Update()
+    void Update()
     {
         
     }
