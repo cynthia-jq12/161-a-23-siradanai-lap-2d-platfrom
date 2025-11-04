@@ -45,12 +45,11 @@ public class Crocodile : Enemy , IShootable
         if (WaitTime >= ReloadTime)
         {
             anim.SetTrigger("Shoot");
-            var bullet = Instantiate(Bullet,ShootPoint.position, Quaternion.identity);
+            var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
             Rock rock = bullet.GetComponent<Rock>();
             rock.InitWeapon(30, this);
             WaitTime = 0.0f;
         }
-        
         Debug.Log($"{this.name} shoots rock to the {player.name}!");
     }
 }
