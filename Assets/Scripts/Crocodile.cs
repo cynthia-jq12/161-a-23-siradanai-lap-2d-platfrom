@@ -36,6 +36,7 @@ public class Crocodile : Enemy , IShootable
     }
     private void FixedUpdate()
     {
+        WaitTime += Time.fixedDeltaTime;
         Behavior();
     }
 
@@ -44,9 +45,9 @@ public class Crocodile : Enemy , IShootable
         if (WaitTime >= ReloadTime)
         {
             anim.SetTrigger("Shoot");
-            var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
+            var bullet = Instantiate(Bullet,ShootPoint.position, Quaternion.identity);
             Rock rock = bullet.GetComponent<Rock>();
-            rock.InitWeapon(20, this);
+            rock.InitWeapon(30, this);
             WaitTime = 0.0f;
         }
         
